@@ -10,7 +10,7 @@ use PrestaShopBundle\Form\Admin\Type\TranslatableType;
 use PsSeoNames\Repository\SeoCategoryNameRepository;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
-class PsSeoNames extends Module
+class Psseonames extends Module
 {
     private const FIELD_NAME = 'psseonames_seo_name';
 
