@@ -133,6 +133,31 @@ class Psseonames extends Module
         if (isset($params['category_name'])) {
             $params['category_name'] = $seoName;
         }
+
+        $this->assignSeoNameToSmarty($params, $seoName);
+    }
+
+    private function assignSeoNameToSmarty(array $params, $seoName)
+    {
+        if (!isset($this->context->smarty)) {
+            return;
+        }
+
+        $assignData = [];
+
+        if (isset($params['category']) && is_array($params['category'])) {
+            $assignData['category'] = array_merge($params['category'], ['name' => $seoName]);
+        }
+
+        if (isset($params['listing']) && is_array($params['listing'])) {
+            $assignData['listing'] = array_merge($params['listing'], ['label' => $seoName]);
+        }
+
+        $assignData['category_name'] = $seoName;
+
+        if (!empty($assignData)) {
+            $this->context->smarty->assign($assignData);
+        }
     }
 
     private function saveSeoNamesFromFormData(array $params)
