@@ -10,7 +10,7 @@ En la ficha de categoría (Backoffice) añade un campo translatable **Nombre Seo
 - `id_lang`
 - `id_shop`
 
-En Frontend, si existe valor para la categoría/idioma/tienda actual, ese valor reemplaza el título visible (H1 / etiqueta de listado usada por el tema). Si no existe, se mantiene el nombre nativo de la categoría.
+En Frontend, si existe valor para la categoría/idioma/tienda actual, ese valor reemplaza el título visible de categoría (H1) y también se aplica en `listing.label`. Si no existe, se mantiene el comportamiento nativo del tema.
 
 > Alcance: no modifica `meta title` ni otros metadatos.
 
@@ -41,7 +41,8 @@ En Frontend, si existe valor para la categoría/idioma/tienda actual, ese valor 
 
 ### Frontoffice
 
-- `actionCategoryControllerSetVariables`: sobreescribe variables visibles cuando hay `Nombre Seo`.
+- `actionCategoryControllerSetVariables`: reemplaza el nombre visible de categoría en la página de categoría (`category.name`).
+  - Ajusta `listing.label` cuando aplica y asigna `{$psseonames_seo_name}` para compatibilidad de plantillas.
 
 ## Tabla creada por el módulo
 
@@ -60,13 +61,13 @@ Clave primaria compuesta:
 
 ## Efecto en Frontend
 
-Cuando hay valor personalizado, el módulo sobreescribe:
+Cuando hay valor personalizado, el módulo actualiza:
 
-- `category.name`
+- `category.name` (título visible/H1 en categoría)
 - `listing.label`
-- `category_name`
+- `psseonames_seo_name` (variable Smarty)
 
-Así se adapta a variaciones de plantillas sin editar el tema.
+Así logra que el H1 de categoría use el Nombre Seo sin tocar core del tema.
 
 ## Estructura rápida del proyecto
 
