@@ -41,8 +41,8 @@ En Frontend, si existe valor para la categoría/idioma/tienda actual, ese valor 
 
 ### Frontoffice
 
-- `actionCategoryControllerSetVariables`: sobreescribe variables visibles cuando hay `Nombre Seo`.
-  - Además reasigna esas variables en Smarty para cubrir temas que leen directamente `{$category}` o `{$listing}` desde plantilla y publica `{$psseonames_seo_name}` como valor explícito.
+- `actionCategoryControllerSetVariables`: sobreescribe el nombre visible de categoría (`category.name`) cuando hay `Nombre Seo`.
+  - Además publica `{$psseonames_seo_name}` en Smarty como valor explícito para uso opcional en plantilla.
 
 ## Tabla creada por el módulo
 
@@ -64,10 +64,9 @@ Clave primaria compuesta:
 Cuando hay valor personalizado, el módulo sobreescribe:
 
 - `category.name`
-- `listing.label`
 - `psseonames_seo_name`
 
-Así se adapta a variaciones de plantillas sin editar el tema.
+Con esto el H1 de la categoría usa el Nombre Seo, sin alterar otras etiquetas del listado.
 
 ## Estructura rápida del proyecto
 

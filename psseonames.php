@@ -127,10 +127,6 @@ class Psseonames extends Module
         // This hook only runs in category controller, so replacing the visible category title is scoped to category pages.
         $params['category']['name'] = $seoName;
 
-        if (isset($params['listing']) && is_array($params['listing'])) {
-            $params['listing']['label'] = $seoName;
-        }
-
         $this->assignSeoNameToSmarty($params, $seoName);
     }
 
@@ -146,10 +142,6 @@ class Psseonames extends Module
 
         if (isset($params['category']) && is_array($params['category'])) {
             $assignData['category'] = array_merge($params['category'], ['name' => $seoName]);
-        }
-
-        if (isset($params['listing']) && is_array($params['listing'])) {
-            $assignData['listing'] = array_merge($params['listing'], ['label' => $seoName]);
         }
 
         $this->context->smarty->assign($assignData);
