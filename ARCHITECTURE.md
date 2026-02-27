@@ -45,6 +45,7 @@ Implementar un módulo desacoplado para gestionar un nombre visible alternativo 
   - Limpieza de datos huérfanos.
 - `actionCategoryControllerSetVariables`
   - Reescritura de variables visibles sin modificar tema/core.
+  - Refuerzo con reasignación en Smarty para que el cambio impacte también en temas que consumen variables ya asignadas en plantilla.
 
 ## 5. Estrategia de datos y rendimiento
 
