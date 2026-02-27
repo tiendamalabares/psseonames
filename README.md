@@ -20,6 +20,8 @@ En Frontend, si existe valor para la categoría/idioma/tienda actual, ese valor 
 2. Instalar desde Backoffice.
 3. Confirmar creación de tabla `PREFIX_psseonames_category`.
 
+> Si el módulo no aparece en el listado de módulos, verifica que el archivo principal sea `psseonames.php` y que la clase declarada sea `Psseonames` (mismo nombre del módulo en PascalCase).
+
 ## Uso funcional
 
 1. Ir a **Catálogo > Categorías**.
