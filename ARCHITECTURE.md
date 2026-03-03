@@ -30,7 +30,7 @@ Implementar un módulo desacoplado para gestionar un nombre visible alternativo 
 
 3. **Lectura en Frontend**
    - Hook `actionCategoryControllerSetVariables` busca valor para categoría/idioma/tienda actual.
-   - Si existe, sobreescribe el nombre visible de categoría (`category.name`) para impactar el H1.
+   - Si existe, sobreescribe `category.name` y `listing.label` para garantizar el cambio del H1 entre temas.
    - Si no existe, aplica fallback natural al nombre original de categoría.
 
 ## 4. Hooks usados y por qué
@@ -44,7 +44,7 @@ Implementar un módulo desacoplado para gestionar un nombre visible alternativo 
 - `actionObjectCategoryDeleteAfter`
   - Limpieza de datos huérfanos.
 - `actionCategoryControllerSetVariables`
-  - Reescritura del nombre visible de categoría sin modificar tema/core.
+  - Reescritura de variables visibles de categoría sin modificar tema/core.
   - Publicación adicional de `psseonames_seo_name` en Smarty para uso explícito en plantillas personalizadas.
 
 ## 5. Estrategia de datos y rendimiento
