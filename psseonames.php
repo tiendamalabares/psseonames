@@ -128,6 +128,7 @@ class Psseonames extends Module
         $params['category']['name'] = $seoName;
 
         if (isset($params['listing']) && is_array($params['listing'])) {
+            // In Classic and many child themes the category H1 is rendered from listing.label.
             $params['listing']['label'] = $seoName;
         }
 
